@@ -1,31 +1,23 @@
 # EventX Frontend (Next.js 15 + TypeScript + Tailwind)
 
-Frontend for the EventX Event Management Platform. Built to match the provided
-`eventx-backend` NestJS API exactly (same routes, same field names).
 
 ## Setup
 
-```bash
+
 cd eventx-frontend
 npm install
-```
+
 
 `.env.local` is already set to talk to the backend on `http://localhost:5000/api`.
 Change it if your backend runs somewhere else:
 
-```
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-NEXT_PUBLIC_UPLOADS_URL=http://localhost:5000
-```
 
 ## Run
 
-Make sure the backend is running first (`npm run start:dev` inside `eventx-backend`),
-then:
 
-```bash
+
 npm run dev
-```
+
 
 Visit `http://localhost:3000`.
 
