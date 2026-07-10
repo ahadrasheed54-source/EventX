@@ -1,7 +1,6 @@
 # EventX Backend (NestJS + MongoDB)
 
-Event Management Platform API — Auth, Users, Events, Categories, Tickets.
-Roles: **admin**, **organizer**, **participant**.
+
 
 ## Setup
 
@@ -10,41 +9,32 @@ cd eventx-backend
 npm install
 ```
 
-Edit `.env` if needed (defaults work for local MongoDB):
 
-```
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/eventx
-JWT_SECRET=eventx_super_secret_key_change_this
-JWT_EXPIRES_IN=7d
-```
 
-Make sure MongoDB is running locally, or replace `MONGO_URI` with a MongoDB Atlas connection string.
 
-## Create the first Admin account
 
-Admins can't self-register through the public API (only organizer/participant can).
-Run this once:
+## Admin account
 
-```bash
+
+
 node seed-admin.js
-```
+
 
 This creates:
 - Email: `admin@eventx.com`
 - Password: `admin123`
 
-(Change the password after first login — via `PATCH /api/users/:id` as admin, or add a "change password" flow later.)
+
 
 ## Run the server
 
-```bash
+
 npm run start:dev
-```
+
 
 - API base URL: `http://localhost:5000/api`
 - Swagger docs (interactive API testing): `http://localhost:5000/api/docs`
-- Uploaded event images served at: `http://localhost:5000/uploads/events/<filename>`
+
 
 ## Folder structure
 
@@ -96,7 +86,6 @@ src/
 | PATCH | /api/events/:id | Owner Organizer/Admin |
 | DELETE | /api/events/:id | Owner Organizer/Admin |
 
-Query params for `GET /api/events`: `page, limit, search, category, location, date, minPrice, maxPrice, organizer`
 
 ### Tickets
 | Method | Route | Access |
@@ -129,7 +118,6 @@ Query params for `GET /api/events`: `page, limit, search, category, location, da
 | PATCH | /api/notifications/read-all | Logged-in user |
 | POST | /api/notifications/announce | Organizer/Admin (notifies every ticket holder of an event) |
 
-A "Ticket confirmed" notification is created automatically for the participant when they book a ticket.
 
 ### Dashboard
 | Method | Route | Access |
