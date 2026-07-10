@@ -8,8 +8,6 @@ cd eventx-frontend
 npm install
 
 
-`.env.local` is already set to talk to the backend on `http://localhost:5000/api`.
-Change it if your backend runs somewhere else:
 
 
 ## Run
