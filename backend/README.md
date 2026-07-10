@@ -4,10 +4,10 @@
 
 ## Setup
 
-```bash
+
 cd eventx-backend
 npm install
-```
+
 
 
 
